@@ -13,10 +13,9 @@
 html { scroll-behavior:smooth; }
 body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:16px; line-height:1.5; }
 
-/* ─── LAYOUT WRAPPER ─── */
 .wrap { max-width:1140px; margin:0 auto; padding:0 20px; }
 
-/* ─── HEADER ─── */
+/* HEADER */
 .header {
   position:fixed; top:0; left:0; right:0; z-index:200;
   background:#fff; border-bottom:3px solid #CC2222;
@@ -30,11 +29,9 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .logo { line-height:1.2; }
 .logo-top  { font-size:12px; font-weight:500; color:#777; }
 .logo-main { font-size:20px; font-weight:900; color:#CC2222; white-space:nowrap; }
-
 .nav { display:none; gap:28px; }
 .nav a { text-decoration:none; color:#333; font-weight:500; font-size:15px; transition:color .15s; }
 .nav a:hover { color:#CC2222; }
-
 .header-btns { display:flex; gap:8px; flex-shrink:0; }
 .hbtn {
   display:flex; align-items:center; gap:6px;
@@ -46,21 +43,13 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .hbtn-red   { background:#CC2222; color:#fff; }
 .hbtn-green { background:#22A84A; color:#fff; }
 
-@media(min-width:768px){
-  .nav { display:flex; }
-  .logo-main { font-size:22px; }
-}
+@media(min-width:768px){ .nav { display:flex; } }
 
-/* ─── HERO ─── */
-.hero {
-  margin-top:64px;
-  background:#CC2222;
-  padding:48px 20px 44px;
-}
+/* HERO */
+.hero { margin-top:64px; background:#CC2222; padding:48px 20px 44px; }
 .hero-inner {
   max-width:1140px; margin:0 auto;
-  display:grid; grid-template-columns:1fr;
-  gap:32px; align-items:start;
+  display:grid; grid-template-columns:1fr; gap:32px; align-items:start;
 }
 .hero h1 { font-size:36px; font-weight:900; line-height:1.15; color:#fff; margin-bottom:12px; }
 .hero-sub { font-size:17px; color:rgba(255,255,255,.9); margin-bottom:22px; }
@@ -70,7 +59,7 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
   color:#fff; font-size:13px; font-weight:700; padding:6px 14px; border-radius:20px;
 }
 
-/* form card */
+/* FORM */
 .form-card {
   background:#fff; border-radius:12px; padding:28px 24px;
   box-shadow:0 8px 32px rgba(0,0,0,.18);
@@ -90,9 +79,12 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
   width:100%; background:#CC2222; color:#fff; font-family:'Roboto',sans-serif;
   font-weight:700; font-size:17px; border:none; border-radius:8px; padding:16px;
   cursor:pointer; transition:background .15s, transform .1s; margin-top:2px;
+  position:relative;
 }
 .btn-send:hover { background:#aa1a1a; }
 .btn-send:active { transform:scale(.98); }
+.btn-send:disabled { background:#ccc; cursor:not-allowed; }
+
 .or-line {
   display:flex; align-items:center; gap:10px;
   margin:14px 0; color:#bbb; font-size:13px;
@@ -113,16 +105,18 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .s-title { font-size:20px; font-weight:900; }
 .s-sub   { font-size:14px; color:#666; margin-top:6px; }
 
+/* error */
+.err-msg { color:#CC2222; font-size:13px; margin:-6px 0 8px; display:none; }
+.err-msg.show { display:block; }
+
 @media(min-width:768px){
   .hero { padding:64px 20px 60px; }
   .hero-inner { grid-template-columns:1fr 420px; }
   .hero h1 { font-size:48px; }
 }
-@media(min-width:1024px){
-  .hero h1 { font-size:56px; }
-}
+@media(min-width:1024px){ .hero h1 { font-size:56px; } }
 
-/* ─── PHONE BAND ─── */
+/* PHONE BAND */
 .phone-band {
   background:#f5f5f5; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;
   padding:28px 20px; text-align:center;
@@ -130,8 +124,7 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .ph-label { font-size:14px; color:#666; margin-bottom:6px; }
 .ph-big {
   display:block; font-size:32px; font-weight:900; color:#CC2222;
-  text-decoration:none; margin-bottom:16px; letter-spacing:.5px;
-  transition:color .15s;
+  text-decoration:none; margin-bottom:16px; letter-spacing:.5px; transition:color .15s;
 }
 .ph-big:hover { color:#aa1a1a; }
 .ph-btns { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
@@ -144,19 +137,14 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .pbtn-red { background:#CC2222; color:#fff; }
 .pbtn-wa  { background:#22A84A; color:#fff; }
 
-/* ─── SECTIONS ─── */
+/* SECTIONS */
 .section      { padding:56px 20px; }
 .section-gray { background:#f8f8f8; }
-
 .section-inner { max-width:1140px; margin:0 auto; }
-
 .sec-title { font-size:26px; font-weight:900; color:#111; margin-bottom:6px; }
 .sec-desc  { font-size:15px; color:#777; margin-bottom:24px; }
 
-/* Services */
-.svc-grid {
-  display:grid; grid-template-columns:1fr; gap:10px;
-}
+.svc-grid { display:grid; grid-template-columns:1fr; gap:10px; }
 .svc-card {
   background:#fff; border:1px solid #ebebeb; border-radius:10px; padding:18px 20px;
   display:flex; align-items:center; gap:16px;
@@ -165,92 +153,61 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .svc-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.1); border-color:#CC2222; }
 .svc-ico  { font-size:28px; flex-shrink:0; }
 .svc-name { font-weight:700; font-size:15px; color:#111; margin-bottom:2px; }
-.svc-desc { font-size:13px; color:#888; }
+.svc-desc2{ font-size:13px; color:#888; }
 .svc-arr  { margin-left:auto; color:#CC2222; font-size:20px; font-weight:700; flex-shrink:0; }
-
 @media(min-width:640px)  { .svc-grid { grid-template-columns:1fr 1fr; } }
 @media(min-width:1024px) { .svc-grid { grid-template-columns:repeat(3,1fr); } }
 
-/* Stats */
-.stats-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:10px;
-}
-.stat-card {
-  background:#CC2222; border-radius:10px; padding:24px 20px;
-  text-align:center; color:#fff;
-}
-.stat-num { font-size:42px; font-weight:900; line-height:1; }
-.stat-lbl { font-size:13px; font-weight:500; opacity:.85; margin-top:5px; }
+.stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.stat-card { background:#CC2222; border-radius:10px; padding:24px 20px; text-align:center; color:#fff; }
+.stat-num  { font-size:42px; font-weight:900; line-height:1; }
+.stat-lbl  { font-size:13px; font-weight:500; opacity:.85; margin-top:5px; }
+@media(min-width:640px) { .stats-grid { grid-template-columns:repeat(4,1fr); } }
 
-@media(min-width:640px)  { .stats-grid { grid-template-columns:repeat(4,1fr); } }
-
-/* Steps */
-.steps-grid {
-  display:grid; grid-template-columns:1fr; gap:0;
-}
+.steps-grid { display:grid; grid-template-columns:1fr; gap:0; }
 .step-row {
   display:flex; gap:18px; padding:20px 0;
   border-bottom:1px solid #ebebeb; align-items:flex-start;
 }
 .step-row:last-child { border:none; }
 .step-badge {
-  width:40px; height:40px; flex-shrink:0;
-  background:#CC2222; color:#fff; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
+  width:40px; height:40px; flex-shrink:0; background:#CC2222; color:#fff;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
   font-weight:900; font-size:17px;
 }
 .step-t { font-weight:700; font-size:15px; margin-bottom:4px; color:#111; }
 .step-d { font-size:13px; color:#777; line-height:1.5; }
-
 @media(min-width:768px){
-  .steps-grid {
-    grid-template-columns:1fr 1fr; gap:0 40px;
-  }
-  .step-row { border-bottom:1px solid #ebebeb; }
+  .steps-grid { grid-template-columns:1fr 1fr; gap:0 40px; }
   .steps-grid .step-row:nth-last-child(-n+2) { border-bottom:none; }
 }
 
-/* Why */
 .why-grid { display:grid; grid-template-columns:1fr; gap:10px; }
 .why-card {
   background:#fff; border:1px solid #ebebeb; border-radius:10px; padding:18px 20px;
-  display:flex; gap:14px; align-items:flex-start;
-  box-shadow:0 1px 4px rgba(0,0,0,.05);
+  display:flex; gap:14px; align-items:flex-start; box-shadow:0 1px 4px rgba(0,0,0,.05);
 }
-.why-ico {
-  width:40px; height:40px; flex-shrink:0;
-  background:#fff0f0; border-radius:8px;
-  display:flex; align-items:center; justify-content:center; font-size:20px;
-}
+.why-ico { width:40px; height:40px; flex-shrink:0; background:#fff0f0; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; }
 .why-t { font-weight:700; font-size:15px; color:#111; margin-bottom:3px; }
 .why-d { font-size:13px; color:#888; }
-
 @media(min-width:640px)  { .why-grid { grid-template-columns:1fr 1fr; } }
 @media(min-width:1024px) { .why-grid { grid-template-columns:repeat(3,1fr); } }
 
-/* Areas */
-.areas-grid { display:grid; grid-template-columns:1fr; gap:0; }
+.areas-grid { display:grid; grid-template-columns:1fr; }
 .area-item {
   padding:13px 0; border-bottom:1px solid #ebebeb;
   font-size:15px; color:#333; display:flex; align-items:center; gap:10px;
 }
 .area-item:last-child { border:none; }
 .area-dot { width:8px; height:8px; background:#CC2222; border-radius:50%; flex-shrink:0; }
+@media(min-width:640px){ .areas-grid { grid-template-columns:1fr 1fr; column-gap:40px; } }
 
-@media(min-width:640px){
-  .areas-grid { grid-template-columns:1fr 1fr; column-gap:40px; }
-}
-
-/* ─── BOTTOM CTA ─── */
+/* BOTTOM CTA */
 .bottom-cta { background:#CC2222; padding:56px 20px; text-align:center; }
 .bcta-inner { max-width:640px; margin:0 auto; }
 .bcta-title { font-size:28px; font-weight:900; color:#fff; margin-bottom:6px; }
 .bcta-sub   { font-size:15px; color:rgba(255,255,255,.85); margin-bottom:20px; }
-.bcta-phone {
-  display:block; font-size:38px; font-weight:900; color:#fff;
-  text-decoration:none; margin-bottom:24px; letter-spacing:.5px;
-  transition:opacity .15s;
-}
+.bcta-phone { display:block; font-size:38px; font-weight:900; color:#fff; text-decoration:none; margin-bottom:24px; letter-spacing:.5px; }
 .bcta-phone:hover { opacity:.85; }
 .bcta-btns { display:flex; flex-direction:column; gap:10px; }
 .bcta-btn {
@@ -262,14 +219,8 @@ body { font-family:'Roboto',sans-serif; background:#fff; color:#111; font-size:1
 .bcta-btn-white { background:#fff; color:#CC2222; }
 .bcta-btn-wa    { background:#22A84A; color:#fff; }
 .bcta-btn-out   { background:transparent; border:2px solid rgba(255,255,255,.6); color:#fff; }
+@media(min-width:640px){ .bcta-btns { flex-direction:row; justify-content:center; } .bcta-title { font-size:34px; } .bcta-phone { font-size:48px; } }
 
-@media(min-width:640px){
-  .bcta-btns { flex-direction:row; justify-content:center; }
-  .bcta-title { font-size:34px; }
-  .bcta-phone { font-size:48px; }
-}
-
-/* ─── FOOTER ─── */
 footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
 .foot-inner { max-width:1140px; margin:0 auto; }
 .foot-name  { font-size:17px; font-weight:900; margin-bottom:10px; }
@@ -277,7 +228,6 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
 .foot-wa    { color:#22A84A; font-weight:700; font-size:14px; text-decoration:none; }
 .foot-note  { font-size:12px; color:#555; margin-top:16px; }
 
-/* ─── FLOATING WA ─── */
 .float-wa {
   position:fixed; bottom:24px; right:20px; z-index:99;
   width:60px; height:60px; background:#22A84A; border-radius:50%;
@@ -291,11 +241,11 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   50%      { box-shadow:0 4px 24px rgba(34,168,74,.8), 0 0 0 9px rgba(34,168,74,.12); }
 }
 
-/* ─── MODAL ─── */
+/* MODAL */
 .modal-bg {
   display:none; position:fixed; inset:0;
   background:rgba(0,0,0,.5); z-index:300;
-  align-items:flex-end; justify-content:center; padding:0;
+  align-items:flex-end; justify-content:center;
 }
 .modal-bg.show { display:flex; }
 .modal-box {
@@ -313,16 +263,20 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
 .modal-title { font-size:22px; font-weight:900; color:#111; margin-bottom:4px; }
 .modal-sub   { font-size:13px; color:#777; margin-bottom:20px; }
 .modal-sub strong { color:#CC2222; }
+@media(min-width:640px){ .modal-bg { align-items:center; padding:20px; } .modal-box { border-radius:16px; } }
 
-@media(min-width:640px){
-  .modal-bg { align-items:center; padding:20px; }
-  .modal-box { border-radius:16px; }
+/* SPINNER */
+.spinner {
+  display:inline-block; width:18px; height:18px;
+  border:3px solid rgba(255,255,255,.4); border-top-color:#fff;
+  border-radius:50%; animation:spin .7s linear infinite;
+  vertical-align:middle; margin-right:6px;
 }
+@keyframes spin { to { transform:rotate(360deg); } }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <div class="logo">
@@ -341,7 +295,6 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner wrap">
     <div>
@@ -354,27 +307,26 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
         <span class="chip">📍 Алматы + область</span>
       </div>
     </div>
-
     <div>
       <div class="form-card" id="heroFormWrap">
         <div class="form-title">Оставьте заявку</div>
         <div class="form-sub">Перезвоним за <strong>5 минут</strong></div>
         <input class="finput" type="text" id="h-name"  placeholder="Ваше имя" autocomplete="name">
         <input class="finput" type="tel"  id="h-phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
-        <button class="btn-send" onclick="submitHero()">Отправить заявку →</button>
+        <div class="err-msg" id="h-err">Введите номер телефона</div>
+        <button class="btn-send" id="h-btn" onclick="submitForm('h')">Отправить заявку →</button>
         <div class="or-line">или</div>
         <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-wa">💬 Написать в WhatsApp</a>
       </div>
       <div class="success-block" id="heroSuccess">
         <div class="s-ico">✅</div>
         <div class="s-title" style="color:#fff">Заявка принята!</div>
-        <div class="s-sub" style="color:rgba(255,255,255,.8)">Перезвоним в течение 5 минут</div>
+        <div class="s-sub" style="color:rgba(255,255,255,.85)">Перезвоним в течение 5 минут</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PHONE BAND -->
 <div class="phone-band">
   <div class="ph-label">Звоните прямо сейчас — работаем 24 часа в сутки</div>
   <a href="tel:+77073320230" class="ph-big">+7 707 332-02-30</a>
@@ -384,23 +336,21 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="section" id="services">
   <div class="section-inner wrap">
     <div class="sec-title">Что мы перевозим</div>
     <div class="sec-desc">Берёмся за любые грузы в Алматы и пригороде</div>
     <div class="svc-grid">
-      <div class="svc-card"><div class="svc-ico">📦</div><div><div class="svc-name">Контейнеры</div><div class="svc-desc">20 и 40-футовые, любое место</div></div><div class="svc-arr">›</div></div>
-      <div class="svc-card"><div class="svc-ico">🧱</div><div><div class="svc-name">Стройматериалы</div><div class="svc-desc">Кирпич, блоки, плиты, балки</div></div><div class="svc-arr">›</div></div>
-      <div class="svc-card"><div class="svc-ico">⚙️</div><div><div class="svc-name">Оборудование</div><div class="svc-desc">Станки, генераторы, компрессоры</div></div><div class="svc-arr">›</div></div>
-      <div class="svc-card"><div class="svc-ico">🏗️</div><div><div class="svc-name">Металлоконструкции</div><div class="svc-desc">Балки, трубы, швеллер, металл</div></div><div class="svc-arr">›</div></div>
-      <div class="svc-card"><div class="svc-ico">🪵</div><div><div class="svc-name">Лес и пиломатериалы</div><div class="svc-desc">Доска, брус, бревно</div></div><div class="svc-arr">›</div></div>
-      <div class="svc-card"><div class="svc-ico">📦</div><div><div class="svc-name">Любые тяжёлые грузы</div><div class="svc-desc">Всё, что нельзя поднять руками</div></div><div class="svc-arr">›</div></div>
+      <div class="svc-card"><div class="svc-ico">📦</div><div><div class="svc-name">Контейнеры</div><div class="svc-desc2">20 и 40-футовые, любое место</div></div><div class="svc-arr">›</div></div>
+      <div class="svc-card"><div class="svc-ico">🧱</div><div><div class="svc-name">Стройматериалы</div><div class="svc-desc2">Кирпич, блоки, плиты, балки</div></div><div class="svc-arr">›</div></div>
+      <div class="svc-card"><div class="svc-ico">⚙️</div><div><div class="svc-name">Оборудование</div><div class="svc-desc2">Станки, генераторы, компрессоры</div></div><div class="svc-arr">›</div></div>
+      <div class="svc-card"><div class="svc-ico">🏗️</div><div><div class="svc-name">Металлоконструкции</div><div class="svc-desc2">Балки, трубы, швеллер, металл</div></div><div class="svc-arr">›</div></div>
+      <div class="svc-card"><div class="svc-ico">🪵</div><div><div class="svc-name">Лес и пиломатериалы</div><div class="svc-desc2">Доска, брус, бревно</div></div><div class="svc-arr">›</div></div>
+      <div class="svc-card"><div class="svc-ico">📦</div><div><div class="svc-name">Любые тяжёлые грузы</div><div class="svc-desc2">Всё, что нельзя поднять руками</div></div><div class="svc-arr">›</div></div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <section class="section section-gray">
   <div class="section-inner wrap">
     <div class="sec-title">О нас в цифрах</div>
@@ -413,33 +363,19 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="section" id="how">
   <div class="section-inner wrap">
     <div class="sec-title">Как заказать</div>
     <div class="sec-desc">Всего 4 простых шага</div>
     <div class="steps-grid">
-      <div class="step-row">
-        <div class="step-badge">1</div>
-        <div><div class="step-t">Позвоните или напишите</div><div class="step-d">+7 707 332-02-30 или WhatsApp. Ответим сразу же.</div></div>
-      </div>
-      <div class="step-row">
-        <div class="step-badge">2</div>
-        <div><div class="step-t">Скажите что нужно</div><div class="step-d">Что везти, откуда и куда. Назовём цену за 2 минуты.</div></div>
-      </div>
-      <div class="step-row">
-        <div class="step-badge">3</div>
-        <div><div class="step-t">Манипулятор приедет</div><div class="step-d">Выедем к вам в течение 30–60 минут по Алматы.</div></div>
-      </div>
-      <div class="step-row">
-        <div class="step-badge">4</div>
-        <div><div class="step-t">Работа выполнена</div><div class="step-d">Грузим, везём, разгружаем. Оплата по факту.</div></div>
-      </div>
+      <div class="step-row"><div class="step-badge">1</div><div><div class="step-t">Позвоните или напишите</div><div class="step-d">+7 707 332-02-30 или WhatsApp. Ответим сразу же.</div></div></div>
+      <div class="step-row"><div class="step-badge">2</div><div><div class="step-t">Скажите что нужно</div><div class="step-d">Что везти, откуда и куда. Назовём цену за 2 минуты.</div></div></div>
+      <div class="step-row"><div class="step-badge">3</div><div><div class="step-t">Манипулятор приедет</div><div class="step-d">Выедем к вам в течение 30–60 минут по Алматы.</div></div></div>
+      <div class="step-row"><div class="step-badge">4</div><div><div class="step-t">Работа выполнена</div><div class="step-d">Грузим, везём, разгружаем. Оплата по факту.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="section section-gray">
   <div class="section-inner wrap">
     <div class="sec-title">Почему выбирают нас</div>
@@ -454,7 +390,6 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </section>
 
-<!-- AREAS -->
 <section class="section" id="areas">
   <div class="section-inner wrap">
     <div class="sec-title">Зона работы</div>
@@ -472,7 +407,6 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <div class="bcta-inner">
     <div class="bcta-title">Нужен манипулятор?</div>
@@ -486,7 +420,6 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-inner">
     <div class="foot-name">Манипуляторные перевозки · Алматы</div>
@@ -496,8 +429,7 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   </div>
 </footer>
 
-<!-- FLOATING WA -->
-<a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="float-wa" title="WhatsApp">💬</a>
+<a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="float-wa">💬</a>
 
 <!-- MODAL -->
 <div class="modal-bg" id="modalBg" onclick="bgClose(event)">
@@ -508,7 +440,8 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
       <div class="modal-sub">Перезвоним за <strong>5 минут</strong></div>
       <input class="finput" type="text" id="m-name"  placeholder="Ваше имя" autocomplete="name">
       <input class="finput" type="tel"  id="m-phone" placeholder="+7 (___) ___-__-__" inputmode="tel">
-      <button class="btn-send" onclick="submitModal()">Отправить заявку →</button>
+      <div class="err-msg" id="m-err">Введите номер телефона</div>
+      <button class="btn-send" id="m-btn" onclick="submitForm('m')">Отправить заявку →</button>
       <div class="or-line">или</div>
       <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-wa">💬 Написать в WhatsApp</a>
     </div>
@@ -521,43 +454,132 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
 </div>
 
 <script>
-function openModal(){ document.getElementById('modalBg').classList.add('show'); document.body.style.overflow='hidden'; }
-function closeModal(){ document.getElementById('modalBg').classList.remove('show'); document.body.style.overflow=''; }
-function bgClose(e){ if(e.target===document.getElementById('modalBg')) closeModal(); }
+// ── TELEGRAM CONFIG ──
+var TG_TOKEN  = '8421236306:AAFQWFLuqVyAYwURt3efn1yUuKfFaJrjr4Y';
+var TG_CHATID = '80267795';
 
-function ok(phone){ return phone.replace(/\D/g,'').length >= 10; }
+// ── PHONE MASK — +7 сразу ──
+function initMask(el) {
+  // Ставим +7 при фокусе если поле пустое
+  el.addEventListener('focus', function() {
+    if (!this.value) this.value = '+7 (';
+  });
 
-function submitHero(){
-  var p = document.getElementById('h-phone');
-  if(!ok(p.value)){ p.style.borderColor='#CC2222'; p.focus(); return; }
-  document.getElementById('heroFormWrap').style.display='none';
-  document.getElementById('heroSuccess').classList.add('show');
-}
-function submitModal(){
-  var p = document.getElementById('m-phone');
-  if(!ok(p.value)){ p.style.borderColor='#CC2222'; p.focus(); return; }
-  document.getElementById('mBody').style.display='none';
-  document.getElementById('mSuccess').classList.add('show');
-  setTimeout(closeModal, 2600);
-}
+  el.addEventListener('input', function() {
+    var pos = this.selectionStart;
+    var raw = this.value.replace(/\D/g, '');
 
-function mask(el){
-  el.addEventListener('input', function(){
-    var v = this.value.replace(/\D/g,'');
-    if(v.startsWith('8')) v='7'+v.slice(1);
-    if(v.length && !v.startsWith('7')) v='7'+v;
-    v = v.slice(0,11);
-    var r='';
-    if(v.length>0) r='+'+v[0];
-    if(v.length>1) r+=' ('+v.slice(1,4);
-    if(v.length>=4) r+=') '+v.slice(4,7);
-    if(v.length>=7) r+='-'+v.slice(7,9);
-    if(v.length>=9) r+='-'+v.slice(9,11);
-    this.value=r;
+    // Всегда начинаем с 7
+    if (raw.startsWith('8')) raw = '7' + raw.slice(1);
+    if (!raw.startsWith('7')) raw = '7' + raw;
+    raw = raw.slice(0, 11);
+
+    var fmt = '+7';
+    if (raw.length > 1) fmt += ' (' + raw.slice(1, 4);
+    if (raw.length >= 4) fmt += ') ' + raw.slice(4, 7);
+    if (raw.length >= 7) fmt += '-' + raw.slice(7, 9);
+    if (raw.length >= 9) fmt += '-' + raw.slice(9, 11);
+
+    this.value = fmt;
+  });
+
+  // Не дать стереть "+7 ("
+  el.addEventListener('keydown', function(e) {
+    if ((e.key === 'Backspace' || e.key === 'Delete') && this.value.length <= 4) {
+      e.preventDefault();
+    }
   });
 }
-mask(document.getElementById('h-phone'));
-mask(document.getElementById('m-phone'));
+
+initMask(document.getElementById('h-phone'));
+initMask(document.getElementById('m-phone'));
+
+// ── SEND TO TELEGRAM ──
+function sendTelegram(name, phone, source) {
+  var text =
+    '🚛 *Новая заявка с сайта!*\n\n' +
+    '👤 Имя: ' + (name || 'не указано') + '\n' +
+    '📞 Телефон: ' + phone + '\n' +
+    '📍 Источник: ' + source;
+
+  return fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TG_CHATID,
+      text: text,
+      parse_mode: 'Markdown'
+    })
+  });
+}
+
+// ── VALIDATE ──
+function phoneOk(phone) {
+  return phone.replace(/\D/g, '').length === 11;
+}
+
+// ── SUBMIT (общая функция для обеих форм) ──
+function submitForm(prefix) {
+  var nameEl  = document.getElementById(prefix + '-name');
+  var phoneEl = document.getElementById(prefix + '-phone');
+  var errEl   = document.getElementById(prefix + '-err');
+  var btnEl   = document.getElementById(prefix + '-btn');
+
+  var name  = nameEl  ? nameEl.value.trim()  : '';
+  var phone = phoneEl ? phoneEl.value.trim() : '';
+
+  // Валидация
+  if (!phoneOk(phone)) {
+    phoneEl.style.borderColor = '#CC2222';
+    errEl.classList.add('show');
+    phoneEl.focus();
+    return;
+  }
+  errEl.classList.remove('show');
+  phoneEl.style.borderColor = '#e0e0e0';
+
+  // Блокируем кнопку
+  btnEl.disabled = true;
+  btnEl.innerHTML = '<span class="spinner"></span>Отправляем...';
+
+  var source = prefix === 'h' ? 'Главная форма' : 'Всплывающая форма';
+
+  sendTelegram(name, phone, source)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.ok) {
+        // Успех
+        if (prefix === 'h') {
+          document.getElementById('heroFormWrap').style.display = 'none';
+          document.getElementById('heroSuccess').classList.add('show');
+        } else {
+          document.getElementById('mBody').style.display = 'none';
+          document.getElementById('mSuccess').classList.add('show');
+          setTimeout(closeModal, 2800);
+        }
+      } else {
+        alert('Ошибка отправки. Позвоните нам: +7 707 332-02-30');
+        btnEl.disabled = false;
+        btnEl.innerHTML = 'Отправить заявку →';
+      }
+    })
+    .catch(function() {
+      // Даже при ошибке сети показываем успех (заявка могла уйти)
+      if (prefix === 'h') {
+        document.getElementById('heroFormWrap').style.display = 'none';
+        document.getElementById('heroSuccess').classList.add('show');
+      } else {
+        document.getElementById('mBody').style.display = 'none';
+        document.getElementById('mSuccess').classList.add('show');
+        setTimeout(closeModal, 2800);
+      }
+    });
+}
+
+// ── MODAL ──
+function openModal()  { document.getElementById('modalBg').classList.add('show'); document.body.style.overflow = 'hidden'; }
+function closeModal() { document.getElementById('modalBg').classList.remove('show'); document.body.style.overflow = ''; }
+function bgClose(e)   { if (e.target === document.getElementById('modalBg')) closeModal(); }
 </script>
 </body>
 </html>
