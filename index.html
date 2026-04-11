@@ -2,1318 +2,708 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Манипулятор в Алматы — Грузим и Увозим за 1 Звонок</title>
-<meta name="description" content="Аренда манипулятора в Алматы и пригороде. Быстро, надёжно, недорого. Звоните 24/7: +7 707 332 0230">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#C41E1E">
+<title>Манипулятор в Алматы — Звоните 24/7</title>
+<meta name="description" content="Манипулятор в Алматы. Быстрый выезд, честная цена. Звоните: +7 707 332-02-30">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --red: #D42B2B;
-    --red-dark: #A31E1E;
-    --red-bright: #FF3333;
-    --black: #111111;
-    --dark: #1A1A1A;
-    --gray: #2A2A2A;
-    --light: #F5F5F5;
-    --white: #FFFFFF;
-    --yellow: #FFD600;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--black);
-    color: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* STICKY HEADER */
-  .sticky-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: var(--black);
-    border-bottom: 3px solid var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 4px 20px rgba(212,43,43,0.4);
-  }
-
-  .sticky-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    color: var(--white);
-    letter-spacing: 2px;
-    line-height: 1.1;
-  }
-  .sticky-logo span { color: var(--red); }
-
-  .sticky-ctas {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .btn-call {
-    background: var(--red);
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s;
-    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-  }
-  .btn-call:hover { background: var(--red-bright); }
-
-  .btn-wa {
-    background: #25D366;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    border: none;
-    padding: 10px 18px;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s;
-    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-  }
-  .btn-wa:hover { background: #1aaf55; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: var(--black);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding-top: 70px;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(212,43,43,0.18) 0%, transparent 70%),
-      repeating-linear-gradient(
-        -55deg,
-        transparent,
-        transparent 40px,
-        rgba(212,43,43,0.03) 40px,
-        rgba(212,43,43,0.03) 41px
-      );
-  }
-
-  .hero-accent {
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 70%;
-    background: var(--red);
-    opacity: 0.6;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 24px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 40px;
-    align-items: center;
-    width: 100%;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--red);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    margin-bottom: 20px;
-    clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-    animation: pulse-badge 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-badge {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-  }
-
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 7vw, 90px);
-    line-height: 0.95;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .hero-title .red { color: var(--red); }
-  .hero-title .outline {
-    -webkit-text-stroke: 2px var(--white);
-    color: transparent;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-sub {
-    font-size: 16px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.6;
-    margin-bottom: 32px;
-    max-width: 520px;
-    animation: fadeUp 0.9s 0.2s ease both;
-  }
-
-  .hero-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 36px;
-    animation: fadeUp 1s 0.3s ease both;
-  }
-
-  .chip {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 8px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--light);
-  }
-  .chip-icon { color: var(--red); font-size: 16px; }
-
-  .hero-ctas {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    animation: fadeUp 1s 0.4s ease both;
-  }
-
-  .btn-hero-call {
-    background: var(--red);
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    border: none;
-    padding: 18px 32px;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.2s;
-    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-    box-shadow: 0 8px 30px rgba(212,43,43,0.5);
-  }
-  .btn-hero-call:hover {
-    background: var(--red-bright);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(212,43,43,0.7);
-  }
-
-  .btn-hero-wa {
-    background: #25D366;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    border: none;
-    padding: 18px 28px;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.2s;
-    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-    box-shadow: 0 8px 30px rgba(37,211,102,0.4);
-  }
-  .btn-hero-wa:hover {
-    background: #1aaf55;
-    transform: translateY(-2px);
-  }
-
-  /* HERO FORM CARD */
-  .hero-form-card {
-    background: var(--dark);
-    border: 2px solid var(--red);
-    padding: 36px 30px;
-    position: relative;
-    animation: fadeUp 0.8s 0.3s ease both;
-    box-shadow: 0 20px 60px rgba(212,43,43,0.25);
-  }
-
-  .hero-form-card::before {
-    content: '';
-    position: absolute;
-    top: -2px; left: 20px;
-    width: 60px; height: 4px;
-    background: var(--yellow);
-  }
-
-  .form-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .form-subtitle {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 24px;
-  }
-  .form-subtitle span { color: var(--yellow); font-weight: 700; }
-
-  .form-group {
-    margin-bottom: 14px;
-  }
-
-  .form-group label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 6px;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    padding: 12px 14px;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--red);
-  }
-
-  .form-group select option { background: var(--dark); }
-  .form-group textarea { height: 70px; resize: none; }
-
-  .btn-form-submit {
-    width: 100%;
-    background: var(--red);
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    border: none;
-    padding: 16px;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .btn-form-submit:hover { background: var(--red-bright); }
-
-  .form-note {
-    text-align: center;
-    font-size: 11px;
-    color: rgba(255,255,255,0.35);
-    margin-top: 10px;
-  }
-
-  /* TRUST BAR */
-  .trust-bar {
-    background: var(--red);
-    padding: 18px 24px;
-    overflow: hidden;
-  }
-
-  .trust-ticker {
-    display: flex;
-    gap: 60px;
-    animation: ticker 20s linear infinite;
-    width: max-content;
-  }
-
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    white-space: nowrap;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-  }
-  .trust-item::before { content: '✦'; opacity: 0.7; }
-
-  /* SECTION STYLES */
-  section { padding: 80px 24px; }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 12px;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 30px;
-    height: 2px;
-    background: var(--red);
-  }
-
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 60px);
-    letter-spacing: 2px;
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-  .section-title .red { color: var(--red); }
-
-  /* SERVICES */
-  .services-section { background: var(--dark); }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px;
-    margin-top: 50px;
-  }
-
-  .service-card {
-    background: var(--black);
-    padding: 32px 28px;
-    border-left: 4px solid transparent;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 0;
-    background: rgba(212,43,43,0.05);
-    transition: height 0.3s;
-  }
-  .service-card:hover {
-    border-left-color: var(--red);
-    transform: translateY(-4px);
-  }
-  .service-card:hover::after { height: 100%; }
-
-  .service-icon {
-    font-size: 36px;
-    margin-bottom: 16px;
-  }
-
-  .service-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    color: var(--white);
-  }
-
-  .service-desc {
-    font-size: 13px;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.6;
-  }
-
-  .service-price {
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--red);
-    font-weight: 700;
-  }
-
-  /* STATS */
-  .stats-section {
-    background: var(--red);
-    padding: 60px 24px;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .stat-card {
-    background: rgba(0,0,0,0.2);
-    padding: 32px 24px;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 64px;
-    line-height: 1;
-    color: var(--white);
-  }
-
-  .stat-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.75);
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  /* HOW IT WORKS */
-  .how-section { background: var(--black); }
-
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0;
-    margin-top: 50px;
-    position: relative;
-  }
-
-  .steps-grid::before {
-    content: '';
-    position: absolute;
-    top: 40px; left: 0; right: 0;
-    height: 2px;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--red) 0, var(--red) 30px,
-      transparent 30px, transparent 50px
-    );
-  }
-
-  .step-card {
-    padding: 0 30px 30px;
-    position: relative;
-  }
-
-  .step-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px;
-    color: var(--red);
-    line-height: 1;
-    margin-bottom: 16px;
-    position: relative;
-    display: inline-block;
-  }
-  .step-num::before {
-    content: attr(data-n);
-    position: absolute;
-    top: -8px; left: -8px;
-    font-size: 72px;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(212,43,43,0.2);
-  }
-
-  .step-title {
-    font-weight: 800;
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-
-  .step-desc {
-    font-size: 13px;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.6;
-  }
-
-  /* CTA BAND */
-  .cta-band {
-    background: var(--dark);
-    border-top: 4px solid var(--red);
-    border-bottom: 4px solid var(--red);
-    padding: 60px 24px;
-    text-align: center;
-  }
-
-  .cta-band-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 64px);
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-
-  .cta-phone-big {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 8vw, 96px);
-    color: var(--red);
-    letter-spacing: 4px;
-    display: block;
-    text-decoration: none;
-    transition: color 0.2s;
-    margin-bottom: 24px;
-    line-height: 1;
-  }
-  .cta-phone-big:hover { color: var(--red-bright); }
-
-  .cta-band-sub {
-    color: rgba(255,255,255,0.5);
-    font-size: 14px;
-    margin-bottom: 32px;
-  }
-
-  .cta-band-btns {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* WHY US */
-  .why-section { background: var(--dark); }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2px;
-    margin-top: 50px;
-  }
-
-  .why-card {
-    background: var(--black);
-    padding: 28px 24px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    transition: transform 0.2s;
-  }
-  .why-card:hover { transform: translateX(6px); }
-
-  .why-check {
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    background: var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  }
-
-  .why-text-title {
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 4px;
-  }
-
-  .why-text-desc {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.5;
-  }
-
-  /* COVERAGE */
-  .coverage-section {
-    background: var(--black);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-    max-height: 500px;
-  }
-
-  .coverage-text {
-    padding: 80px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .coverage-map {
-    background: var(--dark);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-  }
-
-  .map-visual {
-    width: 100%;
-    height: 100%;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(212,43,43,0.25) 0%, transparent 60%),
-      var(--dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 16px;
-    padding: 40px;
-  }
-
-  .map-icon { font-size: 80px; opacity: 0.6; }
-
-  .map-zone {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: var(--red);
-    text-align: center;
-  }
-
-  .coverage-list {
-    list-style: none;
-    margin-top: 24px;
-  }
-
-  .coverage-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: rgba(255,255,255,0.8);
-  }
-
-  .coverage-list li::before {
-    content: '📍';
-    font-size: 14px;
-  }
-
-  /* FLOATING WA BUTTON */
-  .float-wa {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 999;
-    width: 64px;
-    height: 64px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
-    text-decoration: none;
-    transition: transform 0.2s;
-    animation: wa-pulse 3s ease-in-out infinite;
-  }
-
-  .float-wa:hover { transform: scale(1.15); }
-
-  @keyframes wa-pulse {
-    0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
-    50% { box-shadow: 0 8px 50px rgba(37,211,102,0.9), 0 0 0 12px rgba(37,211,102,0.15); }
-  }
-
-  /* FOOTER */
-  footer {
-    background: #0A0A0A;
-    border-top: 3px solid var(--red);
-    padding: 40px 24px;
-    text-align: center;
-  }
-
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-  }
-  .footer-logo span { color: var(--red); }
-
-  .footer-contact {
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .footer-note {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-    margin-top: 20px;
-  }
-
-  /* MODAL */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .modal-overlay.active { display: flex; }
-
-  .modal {
-    background: var(--dark);
-    border: 2px solid var(--red);
-    max-width: 480px;
-    width: 100%;
-    padding: 40px 36px;
-    position: relative;
-    animation: fadeUp 0.4s ease;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 16px; right: 16px;
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.5);
-    font-size: 24px;
-    cursor: pointer;
-  }
-  .modal-close:hover { color: var(--white); }
-
-  .modal-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    margin-bottom: 6px;
-    letter-spacing: 1px;
-  }
-  .modal-sub {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 24px;
-  }
-
-  .success-msg {
-    display: none;
-    text-align: center;
-    padding: 20px 0;
-  }
-  .success-msg.active { display: block; }
-  .success-icon { font-size: 60px; margin-bottom: 12px; }
-  .success-text { font-size: 18px; font-weight: 700; }
-  .success-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 8px; }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .hero-content {
-      grid-template-columns: 1fr;
-    }
-    .hero-form-card {
-      order: -1;
-    }
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .coverage-section {
-      grid-template-columns: 1fr;
-      max-height: none;
-    }
-    .coverage-text { padding: 50px 24px; }
-    .steps-grid::before { display: none; }
-    .sticky-ctas .btn-call span,
-    .sticky-ctas .btn-wa span { display: none; }
-    .btn-hero-call, .btn-hero-wa { font-size: 15px; padding: 15px 22px; }
-  }
-
-  @media (max-width: 480px) {
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .stat-num { font-size: 48px; }
-  }
+:root {
+  --red: #C41E1E;
+  --red2: #E02222;
+  --black: #0E0E0E;
+  --dark: #161616;
+  --card: #1E1E1E;
+  --white: #FFFFFF;
+  --gray: rgba(255,255,255,0.55);
+  --line: rgba(255,255,255,0.1);
+  --green: #22C55E;
+  --yellow: #FACC15;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+.bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(14,14,14,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 56px;
+}
+.bar-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+}
+.bar-logo span { color: var(--red); }
+.bar-btns { display: flex; gap: 8px; }
+.btn-sm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.btn-sm-red { background: var(--red); color: #fff; }
+.btn-sm-wa  { background: #16a34a; color: #fff; }
+
+.hero {
+  min-height: 100svh;
+  padding-top: 56px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,30,30,0.22) 0%, transparent 70%),
+    repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 32px 20px 24px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 18px;
+}
+.tag-dot {
+  width: 6px; height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  animation: blink 1.4s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 13vw, 72px);
+  line-height: 0.92;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  animation: up 0.7s ease both;
+}
+.hero-title .r { color: var(--red); }
+.hero-title .o { -webkit-text-stroke: 1.5px rgba(255,255,255,0.4); color: transparent; }
+
+@keyframes up { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.55;
+  margin-bottom: 24px;
+  animation: up 0.7s 0.1s ease both;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  animation: up 0.7s 0.2s ease both;
+}
+.chip {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-card {
+  background: var(--card);
+  border: 1.5px solid rgba(196,30,30,0.5);
+  border-radius: 16px;
+  padding: 24px 20px;
+  animation: up 0.7s 0.25s ease both;
+  box-shadow: 0 20px 60px rgba(196,30,30,0.15);
+}
+.form-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.form-card-sub { font-size: 13px; color: var(--gray); margin-bottom: 18px; }
+.form-card-sub strong { color: var(--yellow); }
+
+.field { margin-bottom: 12px; }
+.field input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 18px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.field input::placeholder { color: rgba(255,255,255,0.3); font-weight: 400; }
+.field input:focus { border-color: var(--red); }
+
+.btn-submit {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  padding: 17px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+.btn-submit:active { transform: scale(0.98); }
+
+.or-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+  color: var(--gray);
+  font-size: 13px;
+}
+.or-row::before, .or-row::after { content:''; flex:1; height:1px; background:var(--line); }
+
+.btn-wa-big {
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  padding: 17px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-wa-big:active { transform: scale(0.98); }
+
+.ticker-wrap { background: var(--red); padding: 13px 0; overflow: hidden; }
+.ticker { display: flex; gap: 48px; width: max-content; animation: tick 18s linear infinite; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.tick-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-weight: 800;
+  font-size: 13px;
+}
+.tick-item::before { content:'✦'; opacity:0.6; }
+
+.section { padding: 52px 20px; }
+.section-dark { background: var(--dark); }
+.sec-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-label::before { content:''; width:24px; height:2px; background:var(--red); }
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 9vw, 52px);
+  line-height: 0.95;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+}
+.sec-title .r { color: var(--red); }
+
+.svc-list { display: flex; flex-direction: column; gap: 2px; }
+.svc-item {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 3px solid transparent;
+}
+.svc-ico { font-size: 28px; flex-shrink: 0; }
+.svc-name { font-weight: 800; font-size: 15px; }
+.svc-desc { font-size: 13px; color: var(--gray); margin-top: 3px; line-height: 1.4; }
+.svc-arr { margin-left: auto; color: var(--red); font-size: 20px; flex-shrink: 0; }
+
+.stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.stat-box {
+  background: var(--red);
+  padding: 24px 20px;
+  text-align: center;
+}
+.stat-box:first-child { border-radius: 12px 0 0 0; }
+.stat-box:nth-child(2) { border-radius: 0 12px 0 0; }
+.stat-box:nth-child(3) { border-radius: 0 0 0 12px; }
+.stat-box:last-child { border-radius: 0 0 12px 0; }
+.stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; }
+.stat-l { font-size: 12px; font-weight: 700; opacity: 0.8; margin-top: 4px; }
+
+.steps-list { display: flex; flex-direction: column; }
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.step:last-child { border: none; }
+.step-num { font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--red); line-height:1; flex-shrink:0; width:52px; }
+.step-title { font-weight: 800; font-size: 16px; margin-bottom: 4px; }
+.step-desc { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+.cta-block {
+  padding: 48px 20px;
+  text-align: center;
+  background: var(--dark);
+  border-top: 3px solid var(--red);
+  border-bottom: 3px solid var(--red);
+}
+.cta-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,8vw,44px); margin-bottom:6px; line-height:1; }
+.cta-phone {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 12vw, 64px);
+  color: var(--red);
+  letter-spacing: 2px;
+  display: block;
+  text-decoration: none;
+  margin: 10px 0 20px;
+  line-height: 1;
+}
+.cta-sub { font-size: 13px; color: var(--gray); margin-bottom: 28px; }
+.cta-btns { display: flex; flex-direction: column; gap: 12px; max-width: 360px; margin: 0 auto; }
+
+.btn-lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btn-lg:active { transform: scale(0.98); }
+.btn-lg-red { background: var(--red); color: #fff; }
+.btn-lg-wa  { background: var(--green); color: #fff; }
+.btn-lg-out { background: transparent; border: 2px solid var(--red); color: var(--white); }
+
+.why-grid { display: flex; flex-direction: column; gap: 2px; }
+.why-item {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.why-check {
+  width: 32px; height: 32px;
+  background: var(--red);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.why-ttl { font-weight: 800; font-size: 15px; margin-bottom: 3px; }
+.why-dsc { font-size: 13px; color: var(--gray); line-height: 1.4; }
+
+.cover-list { display: flex; flex-direction: column; }
+.cover-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cover-item:last-child { border: none; }
+
+footer {
+  background: #080808;
+  border-top: 2px solid var(--red);
+  padding: 32px 20px;
+  text-align: center;
+}
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:2px; margin-bottom:10px; }
+.footer-logo span { color: var(--red); }
+.footer-phone { font-size:20px; font-weight:900; color:#fff; text-decoration:none; display:block; margin-bottom:6px; }
+.footer-note { font-size:12px; color:rgba(255,255,255,0.25); margin-top:16px; }
+
+.float-wa {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 99;
+  width: 60px; height: 60px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 6px 24px rgba(34,197,94,0.45);
+  text-decoration: none;
+  animation: wa-ring 3s ease-in-out infinite;
+}
+@keyframes wa-ring {
+  0%,100%{box-shadow:0 6px 24px rgba(34,197,94,0.45)}
+  50%{box-shadow:0 6px 32px rgba(34,197,94,0.8),0 0 0 10px rgba(34,197,94,0.12)}
+}
+
+.modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+  z-index: 200;
+  padding: 20px;
+  align-items: flex-end;
+}
+.modal-bg.show { display: flex; }
+.modal {
+  background: var(--card);
+  border: 1.5px solid rgba(196,30,30,0.5);
+  border-radius: 20px 20px 16px 16px;
+  padding: 28px 22px 32px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  animation: slide-up 0.35s ease;
+}
+@keyframes slide-up { from{transform:translateY(60px);opacity:0} to{transform:none;opacity:1} }
+.modal-close {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: var(--gray);
+  font-size: 18px;
+  cursor: pointer;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-title { font-family:'Bebas Neue',sans-serif; font-size:26px; margin-bottom:4px; letter-spacing:1px; }
+.modal-sub { font-size:13px; color:var(--gray); margin-bottom:20px; }
+.modal-sub strong { color: var(--yellow); }
+
+.success { display:none; text-align:center; padding:20px 0; }
+.success.show { display:block; }
+.success-ico { font-size:56px; margin-bottom:12px; }
+.success-ttl { font-size:20px; font-weight:900; }
+.success-sub { font-size:14px; color:var(--gray); margin-top:6px; }
+
+@media (min-width: 768px) {
+  .hero-inner { flex-direction:row; align-items:center; gap:48px; max-width:1100px; margin:0 auto; padding:48px 40px; }
+  .hero-left { flex:1; }
+  .hero-right { width:380px; flex-shrink:0; }
+  .stats-row { grid-template-columns:repeat(4,1fr); }
+  .stat-box:first-child { border-radius:12px 0 0 12px; }
+  .stat-box:nth-child(2),
+  .stat-box:nth-child(3) { border-radius:0; }
+  .stat-box:last-child { border-radius:0 12px 12px 0; }
+  .section { padding:64px 40px; max-width:1100px; margin:0 auto; }
+  .svc-list { display:grid; grid-template-columns:1fr 1fr; }
+  .why-grid { display:grid; grid-template-columns:1fr 1fr; }
+  .cta-btns { flex-direction:row; max-width:560px; }
+}
 </style>
 </head>
 <body>
 
-<!-- STICKY HEADER -->
-<div class="sticky-bar">
-  <div class="sticky-logo">МАНИПУЛЯТОР<br><span>В АЛМАТЫ</span></div>
-  <div class="sticky-ctas">
-    <a href="tel:+77073320230" class="btn-call">
-      📞 <span>+7 707 332-02-30</span>
-    </a>
-    <a href="https://wa.me/77073320230" target="_blank" class="btn-wa">
-      💬 <span>WhatsApp</span>
-    </a>
+<div class="bar">
+  <div class="bar-logo">МАНИПУЛЯТОР<br><span>АЛМАТЫ</span></div>
+  <div class="bar-btns">
+    <a href="tel:+77073320230" class="btn-sm btn-sm-red">📞 Позвонить</a>
+    <a href="https://wa.me/77073320230" target="_blank" class="btn-sm btn-sm-wa">💬 WA</a>
   </div>
 </div>
 
-<!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-accent"></div>
-  <div class="hero-content">
+  <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">🚛 Работаем в Алматы 24/7</div>
+      <div class="tag"><span class="tag-dot"></span> Работаем 24/7 в Алматы</div>
       <h1 class="hero-title">
         МАНИПУЛЯТОР<br>
-        <span class="red">В АЛМАТЫ</span><br>
-        <span class="outline">И ПРИГОРОДЕ</span>
+        <span class="r">В АЛМАТЫ</span><br>
+        <span class="o">И ОБЛАСТИ</span>
       </h1>
-      <p class="hero-sub">
-        Грузим, перевозим, разгружаем — любые грузы, любой сложности.
-        Быстрый выезд по Алматы и области. Звоните — приедем!
-      </p>
-      <div class="hero-chips">
-        <div class="chip"><span class="chip-icon">⚡</span> Выезд за 30 минут</div>
-        <div class="chip"><span class="chip-icon">💰</span> Честные цены</div>
-        <div class="chip"><span class="chip-icon">🔧</span> Опытные операторы</div>
-        <div class="chip"><span class="chip-icon">📍</span> Алматы и область</div>
-      </div>
-      <div class="hero-ctas">
-        <a href="tel:+77073320230" class="btn-hero-call">
-          📞 Позвонить сейчас
-        </a>
-        <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-hero-wa">
-          💬 WhatsApp
-        </a>
+      <p class="hero-sub">Грузим, перевозим, разгружаем. Выезд за 30 минут. Честная цена без доплат.</p>
+      <div class="chips">
+        <div class="chip">⚡ Выезд 30 мин</div>
+        <div class="chip">💰 Честная цена</div>
+        <div class="chip">🔧 5+ лет опыта</div>
+        <div class="chip">📍 Алматы + область</div>
       </div>
     </div>
-
-    <!-- FORM CARD -->
-    <div class="hero-form-card">
-      <div class="form-title">ОСТАВЬТЕ ЗАЯВКУ</div>
-      <div class="form-subtitle">Перезвоним за <span>5 минут</span></div>
-
-      <div id="mainForm">
-        <div class="form-group">
-          <label>Ваше имя</label>
-          <input type="text" id="f-name" placeholder="Как вас зовут?">
+    <div class="hero-right">
+      <div class="form-card" id="heroFormWrap">
+        <div class="form-card-title">ОСТАВЬТЕ ЗАЯВКУ</div>
+        <div class="form-card-sub">Перезвоним за <strong>5 минут</strong></div>
+        <div class="field">
+          <input type="text" id="h-name" placeholder="Ваше имя" autocomplete="name">
         </div>
-        <div class="form-group">
-          <label>Номер телефона</label>
-          <input type="tel" id="f-phone" placeholder="+7 (___) ___-__-__">
+        <div class="field">
+          <input type="tel" id="h-phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel">
         </div>
-        <div class="form-group">
-          <label>Тип груза / задача</label>
-          <select id="f-type">
-            <option value="">— Выберите —</option>
-            <option>Перевозка контейнера</option>
-            <option>Строительные материалы</option>
-            <option>Оборудование / техника</option>
-            <option>Металлоконструкции</option>
-            <option>Мебель / домашний переезд</option>
-            <option>Другое</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Комментарий (необязательно)</label>
-          <textarea id="f-comment" placeholder="Адрес, вес, особенности..."></textarea>
-        </div>
-        <button class="btn-form-submit" onclick="submitForm()">
-          🚀 ОТПРАВИТЬ ЗАЯВКУ
-        </button>
-        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку данных</p>
+        <button class="btn-submit" onclick="submitHero()">🚀 Отправить заявку</button>
+        <div class="or-row">или</div>
+        <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-wa-big">💬 Написать в WhatsApp</a>
       </div>
-
-      <div class="success-msg" id="successMsg">
-        <div class="success-icon">✅</div>
-        <div class="success-text">Заявка принята!</div>
-        <div class="success-sub">Мы перезвоним вам в течение 5 минут</div>
+      <div class="success" id="heroSuccess">
+        <div class="success-ico">✅</div>
+        <div class="success-ttl">Заявка принята!</div>
+        <div class="success-sub">Перезвоним в течение 5 минут</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-ticker">
-    <div class="trust-item">Быстрый выезд по Алматы</div>
-    <div class="trust-item">Манипуляторы от 3 до 20 тонн</div>
-    <div class="trust-item">Работаем 24/7 без выходных</div>
-    <div class="trust-item">Опыт более 5 лет</div>
-    <div class="trust-item">Честный расчёт без скрытых платежей</div>
-    <div class="trust-item">Алматы и вся область</div>
-    <!-- Duplicate for infinite scroll -->
-    <div class="trust-item">Быстрый выезд по Алматы</div>
-    <div class="trust-item">Манипуляторы от 3 до 20 тонн</div>
-    <div class="trust-item">Работаем 24/7 без выходных</div>
-    <div class="trust-item">Опыт более 5 лет</div>
-    <div class="trust-item">Честный расчёт без скрытых платежей</div>
-    <div class="trust-item">Алматы и вся область</div>
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="tick-item">Быстрый выезд по Алматы</div>
+    <div class="tick-item">Манипуляторы 3–20 тонн</div>
+    <div class="tick-item">Работаем 24/7 без выходных</div>
+    <div class="tick-item">5+ лет в Алматы</div>
+    <div class="tick-item">Честный расчёт</div>
+    <div class="tick-item">Алматы и вся область</div>
+    <div class="tick-item">Быстрый выезд по Алматы</div>
+    <div class="tick-item">Манипуляторы 3–20 тонн</div>
+    <div class="tick-item">Работаем 24/7 без выходных</div>
+    <div class="tick-item">5+ лет в Алматы</div>
+    <div class="tick-item">Честный расчёт</div>
+    <div class="tick-item">Алматы и вся область</div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services-section">
-  <div class="container">
-    <div class="section-label">Наши услуги</div>
-    <h2 class="section-title">ЧТО МЫ <span class="red">ДЕЛАЕМ</span></h2>
-    <p style="color:rgba(255,255,255,0.5); font-size:14px; max-width:500px;">
-      Манипулятор — это кран на грузовике. Грузит, везёт и разгружает за один рейс.
-    </p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">📦</div>
-        <div class="service-name">ПЕРЕВОЗКА КОНТЕЙНЕРОВ</div>
-        <div class="service-desc">20 и 40-футовые контейнеры. Загрузим, перевезём и поставим точно на место.</div>
-        <div class="service-price">от договорной цены</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🧱</div>
-        <div class="service-name">СТРОИТЕЛЬНЫЕ ГРУЗЫ</div>
-        <div class="service-desc">Кирпич, блоки, плиты, балки, опалубка. Подъём на нужный этаж или площадку.</div>
-        <div class="service-price">от договорной цены</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <div class="service-name">ОБОРУДОВАНИЕ И ТЕХНИКА</div>
-        <div class="service-desc">Станки, генераторы, компрессоры, сельхозтехника. Бережная погрузка.</div>
-        <div class="service-price">от договорной цены</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏗️</div>
-        <div class="service-name">МЕТАЛЛОКОНСТРУКЦИИ</div>
-        <div class="service-desc">Балки, трубы, швеллер, арматура. Любые габаритные металлические грузы.</div>
-        <div class="service-price">от договорной цены</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🪵</div>
-        <div class="service-name">ЛЕС И ПИЛОМАТЕРИАЛЫ</div>
-        <div class="service-desc">Доска, брус, бревно. Погрузка со склада прямо на объект.</div>
-        <div class="service-price">от договорной цены</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <div class="service-name">ПЕРЕЕЗДЫ И ПРОЧИЕ ГРУЗЫ</div>
-        <div class="service-desc">Тяжёлая мебель, сейфы, спецгрузы — всё, что не поднять руками.</div>
-        <div class="service-price">от договорной цены</div>
-      </div>
-    </div>
+<section class="section">
+  <div class="sec-label">Услуги</div>
+  <h2 class="sec-title">ЧТО МЫ <span class="r">ДЕЛАЕМ</span></h2>
+  <div class="svc-list">
+    <div class="svc-item"><div class="svc-ico">📦</div><div><div class="svc-name">Перевозка контейнеров</div><div class="svc-desc">20 и 40-футовые. Загрузим и поставим точно на место</div></div><div class="svc-arr">›</div></div>
+    <div class="svc-item"><div class="svc-ico">🧱</div><div><div class="svc-name">Стройматериалы</div><div class="svc-desc">Кирпич, блоки, плиты, балки, опалубка</div></div><div class="svc-arr">›</div></div>
+    <div class="svc-item"><div class="svc-ico">⚙️</div><div><div class="svc-name">Оборудование и техника</div><div class="svc-desc">Станки, генераторы, компрессоры, сельхозтехника</div></div><div class="svc-arr">›</div></div>
+    <div class="svc-item"><div class="svc-ico">🏗️</div><div><div class="svc-name">Металлоконструкции</div><div class="svc-desc">Балки, трубы, швеллер, арматура, металл</div></div><div class="svc-arr">›</div></div>
+    <div class="svc-item"><div class="svc-ico">🪵</div><div><div class="svc-name">Лес и пиломатериалы</div><div class="svc-desc">Доска, брус, бревно. Со склада прямо на объект</div></div><div class="svc-arr">›</div></div>
+    <div class="svc-item"><div class="svc-ico">🏠</div><div><div class="svc-name">Прочие тяжёлые грузы</div><div class="svc-desc">Сейфы, тяжёлая мебель, спецгрузы</div></div><div class="svc-arr">›</div></div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-section">
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-num">500+</div>
-      <div class="stat-label">Выполненных заказов</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Лет в Алматы</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Работаем без выходных</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">30</div>
-      <div class="stat-label">Минут до выезда</div>
-    </div>
+<div class="stats-row">
+  <div class="stat-box"><div class="stat-n">500+</div><div class="stat-l">Выполненных заказов</div></div>
+  <div class="stat-box"><div class="stat-n">5+</div><div class="stat-l">Лет в Алматы</div></div>
+  <div class="stat-box"><div class="stat-n">24/7</div><div class="stat-l">Без выходных</div></div>
+  <div class="stat-box"><div class="stat-n">30</div><div class="stat-l">Минут до выезда</div></div>
+</div>
+
+<section class="section section-dark">
+  <div class="sec-label">Как работаем</div>
+  <h2 class="sec-title">ЗАКАЗ ЗА <span class="r">4 ШАГА</span></h2>
+  <div class="steps-list">
+    <div class="step"><div class="step-num">01</div><div><div class="step-title">Звоните или пишете</div><div class="step-desc">Позвоните +7 707 332-02-30 или напишите в WhatsApp. Ответим сразу.</div></div></div>
+    <div class="step"><div class="step-num">02</div><div><div class="step-title">Называете задачу</div><div class="step-desc">Скажите что, откуда и куда везти. Рассчитаем цену за 2 минуты.</div></div></div>
+    <div class="step"><div class="step-num">03</div><div><div class="step-title">Выезжаем к вам</div><div class="step-desc">Манипулятор приедет по вашему адресу в течение 30–60 минут.</div></div></div>
+    <div class="step"><div class="step-num">04</div><div><div class="step-title">Работа выполнена</div><div class="step-desc">Грузим, везём, разгружаем. Платите по факту после работы.</div></div></div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="cta-title">НУЖЕН МАНИПУЛЯТОР?</div>
+  <a href="tel:+77073320230" class="cta-phone">+7 707 332-02-30</a>
+  <p class="cta-sub">Алматы и весь пригород · 24/7 без выходных</p>
+  <div class="cta-btns">
+    <a href="tel:+77073320230" class="btn-lg btn-lg-red">📞 Позвонить</a>
+    <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-lg btn-lg-wa">💬 WhatsApp</a>
+    <button class="btn-lg btn-lg-out" onclick="openModal()">📋 Заявка</button>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="how-section">
-  <div class="container">
-    <div class="section-label">Как это работает</div>
-    <h2 class="section-title">ЗАКАЗ ЗА <span class="red">4 ШАГА</span></h2>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num" data-n="01">01</div>
-        <div class="step-title">Звоните или пишете</div>
-        <div class="step-desc">Позвоните по номеру или напишите в WhatsApp. Ответим сразу.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num" data-n="02">02</div>
-        <div class="step-title">Называете задачу</div>
-        <div class="step-desc">Скажите что, откуда и куда везти. Мы рассчитаем стоимость и время.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num" data-n="03">03</div>
-        <div class="step-title">Выезжаем к вам</div>
-        <div class="step-desc">Манипулятор прибудет по вашему адресу. Быстро и без задержек.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num" data-n="04">04</div>
-        <div class="step-title">Работа выполнена</div>
-        <div class="step-desc">Грузим, везём, разгружаем. Вы получаете результат и платите по факту.</div>
-      </div>
-    </div>
+<section class="section">
+  <div class="sec-label">Почему мы</div>
+  <h2 class="sec-title">НАШИ <span class="r">ПЛЮСЫ</span></h2>
+  <div class="why-grid">
+    <div class="why-item"><div class="why-check">⚡</div><div><div class="why-ttl">Выезд за 30 минут</div><div class="why-dsc">Быстро подъедем после вашего звонка</div></div></div>
+    <div class="why-item"><div class="why-check">💰</div><div><div class="why-ttl">Честная цена</div><div class="why-dsc">Цена озвучивается до начала работы</div></div></div>
+    <div class="why-item"><div class="why-check">🛡️</div><div><div class="why-ttl">Опытные операторы</div><div class="why-dsc">Профессионалы с многолетним стажем</div></div></div>
+    <div class="why-item"><div class="why-check">🕐</div><div><div class="why-ttl">Работаем 24/7</div><div class="why-dsc">День, ночь, выходные — всегда на связи</div></div></div>
+    <div class="why-item"><div class="why-check">📍</div><div><div class="why-ttl">Весь Алматы</div><div class="why-dsc">Все районы города и пригород</div></div></div>
+    <div class="why-item"><div class="why-check">📦</div><div><div class="why-ttl">Любые грузы</div><div class="why-dsc">Контейнеры, металл, стройматериалы</div></div></div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="container">
-    <div class="cta-band-title">НУЖЕН МАНИПУЛЯТОР?<br>ЗВОНИТЕ ПРЯМО СЕЙЧАС!</div>
-    <a href="tel:+77073320230" class="cta-phone-big">+7 707 332-02-30</a>
-    <p class="cta-band-sub">Работаем 24 часа в сутки, 7 дней в неделю. Алматы и весь пригород.</p>
-    <div class="cta-band-btns">
-      <a href="tel:+77073320230" class="btn-hero-call" style="font-size:16px">
-        📞 Позвонить
-      </a>
-      <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-hero-wa" style="font-size:16px">
-        💬 Написать в WhatsApp
-      </a>
-      <button class="btn-hero-call" onclick="openModal()" style="background:#FFD600; color:#111; font-size:16px">
-        📋 Оставить заявку
-      </button>
-    </div>
+<section class="section section-dark">
+  <div class="sec-label">Зона работы</div>
+  <h2 class="sec-title">АЛМАТЫ И <span class="r">ПРИГОРОД</span></h2>
+  <div class="cover-list">
+    <div class="cover-item">📍 Алматы — все районы</div>
+    <div class="cover-item">📍 Талгар и Талгарский район</div>
+    <div class="cover-item">📍 Каскелен</div>
+    <div class="cover-item">📍 Капшагай</div>
+    <div class="cover-item">📍 Иле-Алатауский район</div>
+    <div class="cover-item">📍 Жетыген</div>
+    <div class="cover-item">📍 Посёлки Алматинской области</div>
   </div>
-</div>
-
-<!-- WHY US -->
-<section class="why-section">
-  <div class="container">
-    <div class="section-label">Почему выбирают нас</div>
-    <h2 class="section-title">НАШИ <span class="red">ПРЕИМУЩЕСТВА</span></h2>
-    <div class="why-grid" style="margin-top:50px">
-      <div class="why-card">
-        <div class="why-check">✓</div>
-        <div>
-          <div class="why-text-title">Быстрый выезд</div>
-          <div class="why-text-desc">Манипулятор выедет к вам в течение 30–60 минут после звонка</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-check">✓</div>
-        <div>
-          <div class="why-text-title">Честная цена</div>
-          <div class="why-text-desc">Никаких скрытых доплат. Цена озвучивается до начала работы</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-check">✓</div>
-        <div>
-          <div class="why-text-title">Опытные операторы</div>
-          <div class="why-text-desc">Профессионалы с многолетним стажем. Работаем аккуратно и точно</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-check">✓</div>
-        <div>
-          <div class="why-text-title">Работаем 24/7</div>
-          <div class="why-text-desc">День, ночь, выходные и праздники — всегда на связи и всегда готовы</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-check">✓</div>
-        <div>
-          <div class="why-text-title">Широкий охват</div>
-          <div class="why-text-desc">Весь Алматы, Талгар, Каскелен, Иле, Жетыген, Капшагай и пригороды</div>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-check">✓</div>
-        <div>
-          <div class="why-text-title">Любые грузы</div>
-          <div class="why-text-desc">Контейнеры, металл, стройматериалы, оборудование — берёмся за всё</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <a href="tel:+77073320230" style="margin-top:24px; display:block; text-decoration:none;">
+    <div class="btn-lg btn-lg-red">📞 Уточнить выезд в вашем районе</div>
+  </a>
 </section>
 
-<!-- COVERAGE -->
-<div class="coverage-section">
-  <div class="coverage-text">
-    <div class="section-label">Зона работы</div>
-    <h2 class="section-title" style="margin-bottom:12px">АЛМАТЫ<br>И <span class="red">ПРИГОРОД</span></h2>
-    <p style="color:rgba(255,255,255,0.5); font-size:14px; margin-bottom:8px;">
-      Работаем по всему городу и выезжаем за его пределы.
-    </p>
-    <ul class="coverage-list">
-      <li>Алматы (все районы)</li>
-      <li>Талгар и Талгарский район</li>
-      <li>Каскелен</li>
-      <li>Капшагай</li>
-      <li>Иле (Иле-Алатауский район)</li>
-      <li>Жетыген</li>
-      <li>Посёлки Алматинской области</li>
-    </ul>
-  </div>
-  <div class="coverage-map">
-    <div class="map-visual">
-      <div class="map-icon">🗺️</div>
-      <div class="map-zone">АЛМАТЫ И ОБЛАСТЬ</div>
-      <a href="tel:+77073320230" class="btn-hero-call" style="font-size:15px; margin-top:10px">
-        📞 Уточнить выезд
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- SECOND CTA / FINAL FORM -->
-<section style="background:#0D0D0D; padding:80px 24px;">
-  <div class="container" style="max-width:600px; text-align:center">
-    <div class="section-label" style="justify-content:center">Заказать сейчас</div>
-    <h2 class="section-title">ПОЛУЧИТЕ <span class="red">БЕСПЛАТНЫЙ</span><br>РАСЧЁТ СТОИМОСТИ</h2>
-    <p style="color:rgba(255,255,255,0.5); font-size:14px; margin-bottom:36px;">
-      Оставьте контакты — перезвоним за 5 минут и рассчитаем цену под вашу задачу
-    </p>
-
-    <div id="bottomForm">
-      <div style="display:grid; gap:12px;">
-        <input type="text" id="b-name" placeholder="Ваше имя" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); color:#fff; font-family:Montserrat,sans-serif; font-size:15px; padding:14px 18px; width:100%; outline:none;">
-        <input type="tel" id="b-phone" placeholder="+7 (___) ___-__-__" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); color:#fff; font-family:Montserrat,sans-serif; font-size:15px; padding:14px 18px; width:100%; outline:none;">
-        <button class="btn-form-submit" onclick="submitBottomForm()" style="font-size:16px; padding:18px;">
-          ✅ РАССЧИТАТЬ СТОИМОСТЬ
-        </button>
-      </div>
-    </div>
-    <div id="bottomSuccess" style="display:none; padding:30px 0; text-align:center">
-      <div style="font-size:60px; margin-bottom:12px">🎉</div>
-      <div style="font-size:20px; font-weight:800">Заявка отправлена!</div>
-      <div style="font-size:14px; color:rgba(255,255,255,0.5); margin-top:8px">Перезвоним в течение 5 минут</div>
-    </div>
-
-    <div style="margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap">
-      <a href="tel:+77073320230" style="color:var(--red); font-weight:800; font-size:20px; text-decoration:none; font-family:'Bebas Neue',sans-serif; letter-spacing:2px">
-        📞 +7 707 332-02-30
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">МАНИПУЛЯТОР <span>АЛМАТЫ</span></div>
-  <a href="tel:+77073320230" class="footer-contact">+7 707 332-02-30</a>
-  <a href="https://wa.me/77073320230" target="_blank" style="color:#25D366; font-weight:700; font-size:15px; text-decoration:none;">💬 WhatsApp</a>
-  <p class="footer-note">Манипуляторные перевозки в Алматы и пригороде · Работаем 24/7</p>
+  <a href="tel:+77073320230" class="footer-phone">+7 707 332-02-30</a>
+  <a href="https://wa.me/77073320230" target="_blank" style="color:#22C55E;font-weight:800;font-size:15px;text-decoration:none;">💬 WhatsApp</a>
+  <div class="footer-note">Манипуляторные перевозки в Алматы и пригороде · 24/7</div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="float-wa" title="WhatsApp">
-  💬
-</a>
+<a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="float-wa">💬</a>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+<div class="modal-bg" id="modalBg" onclick="bgClose(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div id="modalForm">
+    <div id="modalBody">
       <div class="modal-title">ОСТАВЬТЕ ЗАЯВКУ</div>
-      <div class="modal-sub">Перезвоним за <strong style="color:var(--yellow)">5 минут</strong></div>
-      <div class="form-group">
-        <label>Ваше имя</label>
-        <input type="text" id="m-name" placeholder="Как вас зовут?">
+      <div class="modal-sub">Перезвоним за <strong>5 минут</strong></div>
+      <div class="field" style="margin-bottom:12px">
+        <input type="text" id="m-name" placeholder="Ваше имя" autocomplete="name">
       </div>
-      <div class="form-group">
-        <label>Телефон</label>
-        <input type="tel" id="m-phone" placeholder="+7 (___) ___-__-__">
+      <div class="field" style="margin-bottom:12px">
+        <input type="tel" id="m-phone" placeholder="+7 (___) ___-__-__" inputmode="tel">
       </div>
-      <div class="form-group">
-        <label>Что нужно перевезти?</label>
-        <textarea id="m-comment" placeholder="Опишите груз, откуда и куда..." style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); color:#fff; font-family:Montserrat,sans-serif; padding:12px 14px; width:100%; height:80px; resize:none; outline:none; font-size:14px;"></textarea>
-      </div>
-      <button class="btn-form-submit" onclick="submitModal()">🚀 ОТПРАВИТЬ ЗАЯВКУ</button>
+      <button class="btn-submit" onclick="submitModal()">🚀 Отправить заявку</button>
+      <div class="or-row">или</div>
+      <a href="https://wa.me/77073320230?text=Здравствуйте!%20Хочу%20заказать%20манипулятор." target="_blank" class="btn-wa-big">💬 Написать в WhatsApp</a>
     </div>
-    <div class="success-msg" id="modalSuccess">
-      <div class="success-icon">✅</div>
-      <div class="success-text">Заявка принята!</div>
-      <div class="success-sub">Мы перезвоним вам в течение 5 минут</div>
+    <div class="success" id="modalSuccess">
+      <div class="success-ico">✅</div>
+      <div class="success-ttl">Заявка принята!</div>
+      <div class="success-sub">Перезвоним в течение 5 минут</div>
     </div>
   </div>
 </div>
 
 <script>
-  function openModal() {
-    document.getElementById('modalOverlay').classList.add('active');
-  }
-  function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('active');
-  }
-  function closeModalOutside(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModal();
-  }
+function openModal() {
+  document.getElementById('modalBg').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalBg').classList.remove('show');
+  document.body.style.overflow = '';
+}
+function bgClose(e) {
+  if (e.target === document.getElementById('modalBg')) closeModal();
+}
 
-  function submitForm() {
-    const phone = document.getElementById('f-phone').value.trim();
-    if (!phone) { alert('Пожалуйста, введите номер телефона'); return; }
-    document.getElementById('mainForm').style.display = 'none';
-    document.getElementById('successMsg').classList.add('active');
-    // Here you'd send to your CRM / webhook
-  }
+function validate(phone) { return phone.replace(/\D/g,'').length >= 10; }
 
-  function submitModal() {
-    const phone = document.getElementById('m-phone').value.trim();
-    if (!phone) { alert('Пожалуйста, введите номер телефона'); return; }
-    document.getElementById('modalForm').style.display = 'none';
-    document.getElementById('modalSuccess').classList.add('active');
-    setTimeout(closeModal, 3000);
-  }
+function submitHero() {
+  const p = document.getElementById('h-phone');
+  if (!validate(p.value)) { p.style.borderColor='#E02222'; p.focus(); return; }
+  document.getElementById('heroFormWrap').style.display = 'none';
+  document.getElementById('heroSuccess').classList.add('show');
+}
 
-  function submitBottomForm() {
-    const phone = document.getElementById('b-phone').value.trim();
-    if (!phone) { alert('Пожалуйста, введите номер телефона'); return; }
-    document.getElementById('bottomForm').style.display = 'none';
-    document.getElementById('bottomSuccess').style.display = 'block';
-  }
+function submitModal() {
+  const p = document.getElementById('m-phone');
+  if (!validate(p.value)) { p.style.borderColor='#E02222'; p.focus(); return; }
+  document.getElementById('modalBody').style.display = 'none';
+  document.getElementById('modalSuccess').classList.add('show');
+  setTimeout(closeModal, 2800);
+}
 
-  // Scroll animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.service-card, .why-card, .step-card, .stat-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
+function phoneMask(el) {
+  el.addEventListener('input', function() {
+    let v = this.value.replace(/\D/g,'');
+    if (v.startsWith('8')) v = '7' + v.slice(1);
+    if (v.length && !v.startsWith('7')) v = '7' + v;
+    v = v.slice(0,11);
+    let r = '';
+    if (v.length > 0) r = '+' + v[0];
+    if (v.length > 1) r += ' (' + v.slice(1,4);
+    if (v.length >= 4) r += ') ' + v.slice(4,7);
+    if (v.length >= 7) r += '-' + v.slice(7,9);
+    if (v.length >= 9) r += '-' + v.slice(9,11);
+    this.value = r;
   });
+}
+phoneMask(document.getElementById('h-phone'));
+phoneMask(document.getElementById('m-phone'));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.svc-item,.why-item,.step,.stat-box').forEach(el => {
+  el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity 0.45s ease,transform 0.45s ease';
+  obs.observe(el);
+});
 </script>
 </body>
 </html>
