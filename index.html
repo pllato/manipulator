@@ -334,6 +334,14 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
 .lb-prev { left: 12px; }
 .lb-next { right: 12px; }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-874004749"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-874004749');
+</script>
 </head>
 <body>
 
@@ -649,7 +657,8 @@ function submitForm(prefix) {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.ok) {
-        // Успех
+        // Успех — фиксируем конверсию Google Ads
+        gtag('event', 'conversion', {'send_to': 'AW-874004749/xLXyCP75-pocEI2C4aAD'});
         if (prefix === 'h') {
           document.getElementById('heroFormWrap').style.display = 'none';
           document.getElementById('heroSuccess').classList.add('show');
@@ -666,6 +675,7 @@ function submitForm(prefix) {
     })
     .catch(function() {
       // Даже при ошибке сети показываем успех (заявка могла уйти)
+      gtag('event', 'conversion', {'send_to': 'AW-874004749/xLXyCP75-pocEI2C4aAD'});
       if (prefix === 'h') {
         document.getElementById('heroFormWrap').style.display = 'none';
         document.getElementById('heroSuccess').classList.add('show');
