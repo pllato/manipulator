@@ -343,6 +343,23 @@ footer { background:#1a1a1a; padding:36px 20px; text-align:center; color:#fff; }
   gtag('js', new Date());
   gtag('config', 'AW-18093395332');
 </script>
+<!-- Event snippet for Регистрация conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18093395332/Vr_tCI248Z4cEISbzbND',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 </head>
 <body>
 
@@ -659,7 +676,7 @@ function submitForm(prefix) {
     .then(function(data) {
       if (data.ok) {
         // Успех — фиксируем конверсию Google Ads
-        gtag('event', 'conversion', {'send_to': 'AW-18093395332'});
+        gtag_report_conversion();
         if (prefix === 'h') {
           document.getElementById('heroFormWrap').style.display = 'none';
           document.getElementById('heroSuccess').classList.add('show');
@@ -676,7 +693,7 @@ function submitForm(prefix) {
     })
     .catch(function() {
       // Даже при ошибке сети показываем успех (заявка могла уйти)
-      gtag('event', 'conversion', {'send_to': 'AW-18093395332'});
+      gtag_report_conversion();
       if (prefix === 'h') {
         document.getElementById('heroFormWrap').style.display = 'none';
         document.getElementById('heroSuccess').classList.add('show');
