@@ -360,6 +360,21 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+<!-- Event snippet for Контакт conversion -->
+<script>
+function gtag_report_contact_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18093395332/PAoyCKKZ_Z4cEISbzbND',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 </head>
 <body>
 
@@ -709,6 +724,18 @@ function submitForm(prefix) {
 function openModal()  { document.getElementById('modalBg').classList.add('show'); document.body.style.overflow = 'hidden'; }
 function closeModal() { document.getElementById('modalBg').classList.remove('show'); document.body.style.overflow = ''; }
 function bgClose(e)   { if (e.target === document.getElementById('modalBg')) closeModal(); }
+
+// Контакт: считаем звонки и переходы в WhatsApp как отдельную конверсию.
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="tel:+77752542828"], a[href^="https://wa.me/77752542828"]');
+  if (!link) return;
+
+  var href = link.getAttribute('href');
+  if (!href) return;
+
+  e.preventDefault();
+  gtag_report_contact_conversion(href);
+});
 </script>
 
 <script>
